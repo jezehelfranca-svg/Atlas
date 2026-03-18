@@ -1,0 +1,5 @@
+{
+  "name": "AudioAlchemy - Suno prompt generator",
+  "description": "A creative assistant for generating high-fidelity music prompts for AI platforms like Udio, utilizing a curated list of vintage and classic studio equipment.",
+  "requestFramePermissions": []
+}
