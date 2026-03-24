@@ -13,6 +13,7 @@ export interface GeneratedContent {
   elementBreakdown?: ElementBreakdown[]; // Standard Mode only
   styleTags?: string; // Dirty Tricks Mode only
   lyrics?: string; // Dirty Tricks Mode only
+  imagePrompt?: string; // Album cover prompt
   isDirtyTricks?: boolean;
 }
 

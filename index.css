@@ -9,3 +9,27 @@
   --color-studio-accent: #8b5cf6;
   --color-studio-glow: #a78bfa;
 }
+
+/* iOS Input Zoom Fix */
+@media screen and (max-width: 768px) {
+  input[type="text"], 
+  textarea {
+    font-size: 16px !important;
+  }
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}

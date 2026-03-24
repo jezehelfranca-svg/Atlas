@@ -2,14 +2,17 @@ import { GoogleGenAI, Type } from "@google/genai";
 import { SYSTEM_INSTRUCTION, DIRTY_TRICKS_INSTRUCTION } from '../constants';
 import { GeneratedContent } from '../types';
 
-const apiKey = process.env.API_KEY;
+const apiKey = process.env.GEMINI_API_KEY;
 
 export const generateMusicPrompt = async (userInput: string, isDirtyTricks: boolean = false, lyricsInput?: string, tempo?: string, musicalKey?: string): Promise<GeneratedContent> => {
+  console.log("generateMusicPrompt called with:", { userInput, isDirtyTricks, lyricsInput, tempo, musicalKey });
   if (!apiKey) {
+    console.error("API Key is missing in process.env");
     throw new Error("API Key is missing in process.env");
   }
 
   const ai = new GoogleGenAI({ apiKey });
+  console.log("GoogleGenAI initialized");
 
   const schema = isDirtyTricks ? {
     type: Type.OBJECT,
@@ -58,8 +61,9 @@ export const generateMusicPrompt = async (userInput: string, isDirtyTricks: bool
       promptText += `\n\nEnsure strict adherence to the defined protocol.`;
     }
 
+    console.log("Calling ai.models.generateContent...");
     const response = await ai.models.generateContent({
-      model: 'gemini-3.1-pro-preview',
+      model: 'gemini-3-flash-preview',
       contents: [
         {
           role: 'user',
@@ -74,6 +78,7 @@ export const generateMusicPrompt = async (userInput: string, isDirtyTricks: bool
         responseSchema: schema,
       }
     });
+    console.log("API response received:", response);
 
     const text = response.text;
     if (!text) {
