@@ -1,3 +1,22 @@
+export interface AlchemicalParameters {
+  grit: number;
+  air: number;
+  velocity: number;
+}
+
+export interface InstrumentDetails {
+  name: string;
+  category: string;
+  heritage: string;
+  character: string;
+  pioneeredBy?: string;
+  masteredBy?: string;
+  signatureSound?: string;
+  imageUrl?: string;
+  est?: string;
+  synthesisType?: string;
+}
+
 export interface InstrumentCategory {
   name: string;
   items: string[];

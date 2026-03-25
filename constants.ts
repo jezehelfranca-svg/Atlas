@@ -1,4 +1,56 @@
-import { InstrumentCategory } from './types';
+import { InstrumentCategory, InstrumentDetails } from './types';
+
+export const INSTRUMENT_DETAILS: Record<string, InstrumentDetails> = {
+  "Yamaha DX7": {
+    name: "Yamaha DX7",
+    category: "Legacy Series",
+    heritage: "The 80s frequency-modulation legend. Defined an era of pop and cinematic soundscapes.",
+    character: "Crystal-clear digital textures, biting basslines, and iconic electric pianos.",
+    pioneeredBy: "Brian Eno",
+    masteredBy: "Quincy Jones",
+    signatureSound: "Depeche Mode",
+    est: "1983",
+    synthesisType: "FM Synthesis",
+    imageUrl: "https://lh3.googleusercontent.com/aida-public/AB6AXuDzPvuXUB3uAjMM8xPjOnIKVkEI9pW8X90wpr07ohDkVIHPUSpSnLLsDzne4UHbpzlQtwrCc1EyDj0jOXjxbIIV98q4ErmKtTumSUrGYdva8WbopzEVJi0Wt1cyo-afb1kGEmpygBzk4A8DgQ-EFDkB4VSEZeFmpwZ5gVQM8r12DMzd4ZB7Pc_gTpAjZm5Abkl0VdATnw5loKGnYqB0jFRbvSDW794C3N-B32ssIYxxgvwDZtJWvcYBQYrrP7QtvqBmNa6xvztPk-Y"
+  },
+  "Roland TR-808": {
+    name: "Roland TR-808",
+    category: "Rhythm Classics",
+    heritage: "The heartbeat of hip-hop and electronic music. Its booming sub-bass kick is unmistakable.",
+    character: "Warm analog percussion, iconic cowbell, and deep, resonant kicks.",
+    pioneeredBy: "Afrika Bambaataa",
+    masteredBy: "Rick Rubin",
+    signatureSound: "Marvin Gaye",
+    est: "1980",
+    synthesisType: "Analog Synthesis",
+    imageUrl: "https://picsum.photos/seed/tr808/800/450"
+  },
+  "Moog Minimoog": {
+    name: "Moog Minimoog",
+    category: "Monophonic Legend",
+    heritage: "The first portable synthesizer. Its thick, three-oscillator sound is the gold standard for bass and leads.",
+    character: "Rich, creamy analog filters and powerful, organic low-end presence.",
+    pioneeredBy: "Rick Wakeman",
+    masteredBy: "Bernie Worrell",
+    signatureSound: "Kraftwerk",
+    est: "1970",
+    synthesisType: "Subtractive Synthesis",
+    imageUrl: "https://picsum.photos/seed/minimoog/800/450"
+  }
+};
+
+export const DEFAULT_INSTRUMENT_DETAILS: InstrumentDetails = {
+  name: "Generic Instrument",
+  category: "Standard Series",
+  heritage: "A versatile tool for any production. Reliable and consistent across genres.",
+  character: "Balanced frequency response with a clean, modern profile.",
+  pioneeredBy: "Studio Professionals",
+  masteredBy: "Audio Engineers",
+  signatureSound: "Modern Pop",
+  est: "Modern Era",
+  synthesisType: "Digital/Analog Hybrid",
+  imageUrl: "https://picsum.photos/seed/instrument/800/450"
+};
 
 export const INSTRUMENT_INVENTORY: InstrumentCategory[] = [
   {
